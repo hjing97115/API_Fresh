@@ -21,14 +21,15 @@ class FileRead:
             data = yaml.safe_load(f)
             return data
 
-    def read_ini(self):
+    @staticmethod
+    def read_ini():
         config = configparser.ConfigParser()
-        config.read(self.ini_path, encoding='utf-8')
+        config.read(ini_path, encoding='utf-8')
         return config
 
 
-base_data = FileRead()
-print(base_data)
-print(base_data.read_data_yaml())
-print(base_data.read_ini()['host']['api_sit_url'] + '/code/')
+# base_data = FileRead()
+# print(base_data)
+# print(base_data.read_data_yaml())
+# print(base_data.read_ini()['host']['api_sit_url'] + '/code/')
 
